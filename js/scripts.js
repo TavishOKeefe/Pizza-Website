@@ -1,49 +1,56 @@
 //Business Logic:
 
+
 function Pizza (size, topping){
+  this.size = size;
+  this.topping = topping;
+  this.sizePrice = 0;
+  this.toppingPrice = 0;
   this.size = ["small", "medium", "large"];
   this.topping = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
-  // this.finalPrice = yourPizza;
 }
 
-Pizza.prototype.Price = function(){
-  var sizePrice = 12;
+Pizza.prototype.price = function(){
+  var sizePrice = this.size;
   var sizeSelection = ["small", "medium", "large"];
 
-  if (sizeSelection === "small"){
-    sizePrice + 0;
+  for (var i = 0 ; i < sizeSelection.length; i++){
+
+  if (sizeSelection[i] === 0){
+    sizePrice + 12;
   }
-  else if (sizeSelection === "medium") {
-    sizePrice + 5;
-  } else if (sizeSelection === "large") {
-    sizePrice + 10;
+  else if (sizeSelection[i] === 1) {
+    sizePrice + 17;
+  } else if (sizeSelection[i] === 2) {
+    sizePrice + 22;
   }
-  // console.log(sizePrice);
+  return sizePrice;
+}
 }
 
 
 Pizza.prototype.toppingPrice = function(){
   var toppingSelection = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
-  var costOfTopping = 1.5;
+  var costOfTopping = this.toppingPrice;
 
   for (var i = 0 ; i < toppingSelection.length; i ++) {
 
     if (toppingSelection[i] === 0) {
-      costOfTopping + 0;
+      costOfTopping + 1.5;
     } else if (toppingSelection[i] === 1) {
-      costOfTopping + 3;
+      costOfTopping + 4.5;
     } else if (toppingSelection[i] === 2) {
-      costOfTopping + 5;
+      costOfTopping + 6.5;
     } else if (toppingSelection[i] === 3) {
-      costOfTopping + 6;
+      costOfTopping + 7.5;
     } else if (toppingSelection[i] === 4) {
-      costOfTopping + 7;
+      costOfTopping + 8.5;
     } else if (toppingSelection[i] === 5) {
-      costOfTopping + 8;
+      costOfTopping + 9.5;
     }
 
   }
-  // console.log(costOfTopping);
+  return this.toppingPrice;
 }
 
 //User interface logic:
@@ -57,7 +64,6 @@ $(document).ready(function() {
 
     var userPizza = new Pizza (inputSize, inputToppings);
     var finalPrice = Pizza(userPizza);
-
 
     $("#result").text(finalPrice);
 
