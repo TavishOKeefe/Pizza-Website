@@ -3,9 +3,7 @@
 
 function Pizza (size, topping){
   this.size = size;
-  this.topping = [];
-  // this.sizePrice = 0;
-  // this.toppingPrice = 0;
+  this.topping = topping;
   this.sizeList = ["small", "medium", "large"];
   this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
 }
@@ -14,17 +12,16 @@ Pizza.prototype.price = function(){
   var sizeSelection = this.size;
   var sizePrice = 0;
 
-    if (sizeSelection === "small") {
-      sizePrice += 12;
+    if (sizeSelection === "Small") {
+      sizePrice = 12;
     }
-    else if (sizeSelection === "medium") {
-      sizePrice += 17;
-    } else if (sizeSelection === "large") {
-      sizePrice += 22;
+    else if (sizeSelection === "Medium") {
+      sizePrice = 17;
+    } else if (sizeSelection === "Large") {
+      sizePrice = 22;
     }
     return sizePrice;
 }
-
 
 
 Pizza.prototype.toppingPrice = function(){
@@ -60,7 +57,7 @@ $(document).ready(function() {
     var inputSize = $("#size").val();
     var inputToppings = document.getElementById("#toppings");
 
-    var userPizza = new Pizza (inputSize, inputToppings);
+    var userPizza = new Pizza(inputSize, inputToppings);
     // var finalPrice = Pizza(userPizza);
 
     displayResults(userPizza);
