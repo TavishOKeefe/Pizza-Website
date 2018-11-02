@@ -12,9 +12,9 @@ function Pizza (size, topping){
 
 Pizza.prototype.price = function(){
   var sizeSelection = this.size;
-  var sizePrice = 1;
+  var sizePrice = 0;
 
-    if (sizeSelection === "small"){
+    if (sizeSelection === "small") {
       sizePrice += 12;
     }
     else if (sizeSelection === "medium") {

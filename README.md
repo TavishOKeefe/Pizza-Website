@@ -1,18 +1,20 @@
 # _Order Pizza_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Pizza-Project, November 2nd, 2018._
 
 #### By _**Tavish OKeefe**_
 
 ## Description
 
-_This is a website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost._
+_This is a website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, etc) and a size to order a pizza and see the final cost._
 
 ## Specs
 
 * This program will take an input of a size, and return a price for that size.
-* This program will take various inputs for toppings, and add those toppings sizes together.
-* This program will
+* This program will take various inputs for toppings.
+* This program will add the toppings selected together, and return a price for those toppings.
+* This program will add the price of the size of pizza, and the price of the toppings for the pizza.
+* This program will return a final cost.
 
 ## Setup/Installation Requirements
 
