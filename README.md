@@ -10,8 +10,8 @@ _This is a website for a pizza company where a user can choose one or more indiv
 
 ## Specs
 
-* This program will 
-* This program will
+* This program will take an input of a size, and return a price for that size.
+* This program will take various inputs for toppings, and add those toppings sizes together.
 * This program will
 
 ## Setup/Installation Requirements
