@@ -1,22 +1,23 @@
 //Business Logic:
 
-function Pizza (){
+function Pizza (size, topping){
   this.size = ["small", "medium", "large"];
   this.topping = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
-  this.finalPrice = yourPizza;
-  var yourPizza = (sizePrice + costOfTopping);
+  // this.finalPrice = yourPizza;
 }
 
 Pizza.prototype.Price = function(){
   var sizePrice = 12;
   var sizeSelection = ["small", "medium", "large"];
 
-  if (sizeSelection === "medium") {
+  if (sizeSelection === "small"){
+    sizePrice + 0;
+  }
+  else if (sizeSelection === "medium") {
     sizePrice + 5;
   } else if (sizeSelection === "large") {
     sizePrice + 10;
   }
-  return sizePrice;
   // console.log(sizePrice);
 }
 
@@ -42,7 +43,6 @@ Pizza.prototype.toppingPrice = function(){
     }
 
   }
-  return costOfTopping;
   // console.log(costOfTopping);
 }
 
@@ -53,10 +53,13 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputSize = $("#size").val();
-    var inputToppings = document.getElementById("#toppings").value;
+    var inputToppings = document.getElementById("#toppings");
+
+    var userPizza = new Pizza (inputSize, inputToppings);
+    var finalPrice = Pizza(userPizza);
 
 
-
+    $("#result").text(finalPrice);
 
   });
 });
