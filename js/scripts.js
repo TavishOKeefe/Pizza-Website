@@ -1,11 +1,10 @@
-//Business Logic
-
-var yourPizza = sizePrice + costOfTopping;
+//Business Logic:
 
 function Pizza (){
   this.size = ["small", "medium", "large"];
   this.topping = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
   this.finalPrice = yourPizza;
+  var yourPizza = (sizePrice + costOfTopping);
 }
 
 Pizza.prototype.Price = function(){
@@ -18,7 +17,7 @@ Pizza.prototype.Price = function(){
     sizePrice + 10;
   }
   return sizePrice;
-  console.log(sizePrice);
+  // console.log(sizePrice);
 }
 
 
@@ -44,5 +43,20 @@ Pizza.prototype.toppingPrice = function(){
 
   }
   return costOfTopping;
-  console.log(costOfTopping);
+  // console.log(costOfTopping);
 }
+
+//User interface logic:
+
+$(document).ready(function() {
+  $("form.questions").submit(function(event) {
+    event.preventDefault();
+
+    var inputSize = $("#size").val();
+    var inputToppings = document.getElementById("#toppings").value;
+
+
+
+
+  });
+});
