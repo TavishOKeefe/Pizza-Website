@@ -4,21 +4,21 @@
 function Pizza (size, topping){
   this.size = size;
   this.topping = topping;
-  this.sizeList = ["small", "medium", "large"];
-  this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
+  // this.sizeList = ["small", "medium", "large"];
+  // this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
 }
 
 Pizza.prototype.price = function(){
-  var sizeSelection = this.size;
+  // var sizeSelection = this.size;
   var sizePrice = 0;
 
-    if (sizeSelection === "Small") {
-      sizePrice = 12;
+    if (this.size === "Small") {
+      sizePrice += 12;
     }
-    else if (sizeSelection === "Medium") {
-      sizePrice = 17;
-    } else if (sizeSelection === "Large") {
-      sizePrice = 22;
+    else if (this.size === "Medium") {
+      sizePrice += 17;
+    } else if (this.size === "Large") {
+      sizePrice += 22;
     }
     return sizePrice;
 }
