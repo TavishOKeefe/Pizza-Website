@@ -1,11 +1,11 @@
 //Business Logic:
 
 
-function Pizza (size, topping, price = 0, price2 = 0){
+function Pizza (size, topping, price, price2){
   this.size = size,
-  this.topping = [],
-  this.priceSize = price,
-  this.priceTopping = price2,
+  this.topping = topping,
+  this.priceSize = 0,
+  this.priceTopping = 0,
   this.sizeList = ["small", "medium", "large"];
   this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
 }
@@ -58,8 +58,18 @@ $(document).ready(function() {
   $("form.questions").submit(function(event) {
     event.preventDefault();
 
-    var inputSize = $("select#pizzaSize").val();
-    var inputToppings = document.getElementById("#toppings");
+    var inputSize = $("#pizzaSize").val();
+    var toppings = document.getElementById("#toppings");
+    var tops = toppings.getElementsByTagName("input");
+    for (var i = 0; i < tops.length; i ++){
+      if (tops[i].type === "checkbox") {
+        tops[i].onclick = function (){
+          inputToppings.push(tops);
+        }
+      }
+    }
+
+    var inputToppings = [];
 
     var userPizza = new Pizza(inputSize, inputToppings);
     displayResults(userPizza);

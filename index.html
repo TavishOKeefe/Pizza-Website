@@ -11,7 +11,7 @@
     <div class="container">
 
       <form class="questions">
-        <div id="size">
+        <div class="client-order">
           <label>Select a Size</label>
           <select class="form-control" id="pizzaSize">
             <option>Small</option>
@@ -20,15 +20,17 @@
           </select>
         </div>
         <br>
-        <div id="toppings">
-          <label>Select Your Toppings</label>
-          <br>
-          <input type="checkbox" name="topping1" value="pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="topping2" value="sausage"> Sausage<br>
-          <input type="checkbox" name="topping3" value="cheese"> Cheese<br>
-          <input type="checkbox" name="topping4" value="jalapenio"> Jalapenio<br>
-          <input type="checkbox" name="topping5" value="chicken"> Chicken<br>
-          <input type="checkbox" name="topping6" value="tomato"> Tomato<br>
+        <div class="client-order">
+          <div id="toppings">
+            <label>Select Your Toppings</label>
+            <br>
+            <input type="checkbox" id="pepperoni" value="pepperoni"> Pepperoni<br>
+            <input type="checkbox" id="sausage" value="sausage"> Sausage<br>
+            <input type="checkbox" id="cheese" value="cheese"> Cheese<br>
+            <input type="checkbox" id="jalapenio" value="jalapenio"> Jalapenio<br>
+            <input type="checkbox" id="chicken" value="chicken"> Chicken<br>
+            <input type="checkbox" id="tomato" value="tomato"> Tomato<br>
+          </div>
         </div>
         <br>
         <button type="submit" name="button" class="btn btn-success">Submit</button>
