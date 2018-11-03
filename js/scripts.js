@@ -29,21 +29,21 @@ Pizza.prototype.price = function(){
 
 Pizza.prototype.toppingPrice = function(){
   var toppingSelection = this.topping;
-  var costOfTopping = 0;
+  var costOfTopping = this.priceTopping;
 
   for (var i = 0 ; i < toppingSelection.length; i ++) {
 
-    if (toppingSelection[i] === 0) {
+    if (toppingSelection[i] === "pepperoni") {
       costOfTopping += 1.5;
-    } else if (toppingSelection[i] === 1) {
+    } else if (toppingSelection[i] === "sausage") {
       costOfTopping += 4.5;
-    } else if (toppingSelection[i] === 2) {
+    } else if (toppingSelection[i] === "cheese") {
       costOfTopping += 6.5;
-    } else if (toppingSelection[i] === 3) {
+    } else if (toppingSelection[i] === "jalapenio") {
       costOfTopping += 7.5;
-    } else if (toppingSelection[i] === 4) {
+    } else if (toppingSelection[i] === "chicken") {
       costOfTopping += 8.5;
-    } else if (toppingSelection[i] === 5) {
+    } else if (toppingSelection[i] === "tomato") {
       costOfTopping += 9.5;
     }
 
@@ -59,15 +59,16 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputSize = $("#pizzaSize").val();
-    var toppings = document.getElementById("#toppings");
-    var tops = toppings.getElementsByTagName("input");
-    for (var i = 0; i < tops.length; i ++){
-      if (tops[i].type === "checkbox") {
-        tops[i].onclick = function (){
-          inputToppings.push(tops);
+
+      var toppings = document.getElementById("#toppings");
+      var tops = toppings.getElementsByTagName('input');
+      for (var i = 0; i < tops.length; i ++){
+        if (tops[i].type === "checkbox") {
+          tops[i].onclick = function (){
+            inputToppings.push(tops);
+          }
         }
       }
-    }
 
     var inputToppings = [];
 
