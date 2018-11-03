@@ -1,25 +1,27 @@
 //Business Logic:
 
 
-function Pizza (size, topping){
-  this.size = size;
-  this.topping = topping;
+function Pizza (size, topping, price = 0, price2 = 0){
+  this.size = size,
+  this.topping = [],
+  this.priceSize = price,
+  this.priceTopping = price2,
   this.sizeList = ["small", "medium", "large"];
   this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
 }
 
 Pizza.prototype.price = function(){
-  var sizeSelection = this.size;
-  var sizePrice = 0;
+  var sizeSelection = this.size
+  var sizePrice = this.priceSize;
 
-    if (sizeSelection === "Small") {
-      sizePrice += 12;
+    if (this.size === "Small") {
+      sizePrice += 12
     }
-    else if (sizeSelection === "Medium") {
-      sizePrice += 17;
+    else if (this.size === "Medium") {
+      sizePrice += 17
     }
-    else if (sizeSelection === "Large") {
-      sizePrice += 22;
+    else if (this.size === "Large") {
+      sizePrice += 22
     }
     return sizePrice;
 }
@@ -52,6 +54,7 @@ Pizza.prototype.toppingPrice = function(){
 //User interface logic:
 
 $(document).ready(function() {
+
   $("form.questions").submit(function(event) {
     event.preventDefault();
 
@@ -64,8 +67,8 @@ $(document).ready(function() {
   });
 
   function displayResults(pizzaResults){
-    var pizzaSizePriceResults = pizzaResults.price;
-    var pizzaToppingPriceResults = pizzaResults.toppingPrice;
+    var pizzaSizePriceResults = pizzaResults.price();
+    var pizzaToppingPriceResults = pizzaResults.toppingPrice();
 
     $("#result").text(pizzaSizePriceResults);
     $("#result2").text(pizzaToppingPriceResults);
