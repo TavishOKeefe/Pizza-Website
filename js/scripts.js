@@ -32,7 +32,6 @@ Pizza.prototype.toppingPrice = function(){
   var costOfTopping = this.priceTopping;
 
   for (var i = 0 ; i < toppingSelection.length; i ++) {
-
     if (toppingSelection[i] === "pepperoni") {
       costOfTopping += 1.5;
     } else if (toppingSelection[i] === "sausage") {
@@ -73,6 +72,7 @@ $(document).ready(function() {
     var inputToppings = [];
 
     var userPizza = new Pizza(inputSize, inputToppings);
+
     displayResults(userPizza);
 
   });
