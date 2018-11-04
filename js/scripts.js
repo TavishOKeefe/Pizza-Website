@@ -60,11 +60,11 @@ $(document).ready(function() {
     var inputSize = $("#pizzaSize").val();
 
       var toppings = document.getElementById("#toppings");
-      var tops = toppings.getElementsByTagName('input');
-      for (var i = 0; i < tops.length; i ++){
-        if (tops[i].type === "checkbox") {
-          tops[i].onclick = function (){
-            inputToppings.push(tops);
+      var tops = toppings.getElementsByTagName("INPUT");
+      for (var i=0; i < tops.length; i ++){
+        if (tops[i].type === 'checkbox') {
+          tops[i].onclick = function(){
+            inputToppings.push(checkedValue);
           }
         }
       }
