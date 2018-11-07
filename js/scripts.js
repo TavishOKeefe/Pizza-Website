@@ -1,17 +1,18 @@
 //Business Logic:
 
 
-function Pizza (size, topping, price, price2){
+function Pizza (size, topping, price) {
   this.size = size,
   this.topping = topping,
-  this.priceSize = 0,
-  this.priceTopping = 0,
-  this.sizeList = ["small", "medium", "large"];
-  this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
+  this.priceSize = 0
+  // this.priceTopping = 0,
+  // this.sizeList = ["small", "medium", "large"];
+  // this.toppingList = ["pepperoni", "sausage", "cheese", "jalapenio", "chicken", "tomato"];
 }
 
 Pizza.prototype.price = function(){
-  var sizeSelection = this.size
+  // var sizeSelection = this.size
+  // var typeSelection = this.topping
   var sizePrice = this.priceSize;
 
     if (this.size === "Small") {
@@ -23,32 +24,42 @@ Pizza.prototype.price = function(){
     else if (this.size === "Large") {
       sizePrice += 22
     }
+
+    if (this.topping === "Vegitarian"){
+      sizePrice += 10
+    }
+    else if (this.topping === "Meat-Lovers"){
+      sizePrice += 12
+    }
+    else if (this.topping === "Vegan"){
+      sizePrice += 14
+    }
     return sizePrice;
 }
 
 
-Pizza.prototype.toppingPrice = function(){
-  var toppingSelection = this.topping;
-  var costOfTopping = this.priceTopping;
-
-  for (var i = 0 ; i < toppingSelection.length; i ++) {
-    if (toppingSelection[i] === "pepperoni") {
-      costOfTopping += 1.5;
-    } else if (toppingSelection[i] === "sausage") {
-      costOfTopping += 4.5;
-    } else if (toppingSelection[i] === "cheese") {
-      costOfTopping += 6.5;
-    } else if (toppingSelection[i] === "jalapenio") {
-      costOfTopping += 7.5;
-    } else if (toppingSelection[i] === "chicken") {
-      costOfTopping += 8.5;
-    } else if (toppingSelection[i] === "tomato") {
-      costOfTopping += 9.5;
-    }
-
-  }
-    return costOfTopping;
-}
+// Pizza.prototype.toppingPrice = function(){
+//   var toppingSelection = this.topping;
+//   var costOfTopping = this.priceTopping;
+//
+//   for (var i = 0 ; i < toppingSelection.length; i ++) {
+//     if (toppingSelection[i] === "pepperoni") {
+//       costOfTopping += 1.5;
+//     } else if (toppingSelection[i] === "sausage") {
+//       costOfTopping += 4.5;
+//     } else if (toppingSelection[i] === "cheese") {
+//       costOfTopping += 6.5;
+//     } else if (toppingSelection[i] === "jalapenio") {
+//       costOfTopping += 7.5;
+//     } else if (toppingSelection[i] === "chicken") {
+//       costOfTopping += 8.5;
+//     } else if (toppingSelection[i] === "tomato") {
+//       costOfTopping += 9.5;
+//     }
+//
+//   }
+//     return costOfTopping;
+// }
 
 //User interface logic:
 
@@ -58,19 +69,25 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputSize = $("#pizzaSize").val();
+    var inputToppings = $("#pizzaType").val();
 
-      var toppings = document.getElementById("#toppings");
-      var tops = toppings.getElementsByTagName("INPUT");
-      for (var i=0; i < tops.length; i ++){
-        if (tops[i].type === 'checkbox') {
-          tops[i].onclick = function(){
-            inputToppings.push(checkedValue);
-          }
-        }
-      }
+  //   $("input:checkbox[name=pizza-topping]:checked").each(function() {
+  //     var toppingCheck = $(this).val();
+  //     inputToppings.push(toppingCheck);
+  //     console.log(toppingCheck);
+  // })
+      // var toppings = document.getElementById("#toppings");
+      // var tops = toppings.getElementsByTagName("INPUT");
+      // for (var i=0; i < tops.length; i ++){
+      //   if (tops[i].type === 'checkbox') {
+      //     tops[i].onclick = function(){
+      //       inputToppings.push(checkedValue);
+      //     }
+      //   }
+      // }
 
-    var inputToppings = [];
-
+    // var inputToppings = [];
+    // console.log(inputToppings);
     var userPizza = new Pizza(inputSize, inputToppings);
 
     displayResults(userPizza);
@@ -79,10 +96,10 @@ $(document).ready(function() {
 
   function displayResults(pizzaResults){
     var pizzaSizePriceResults = pizzaResults.price();
-    var pizzaToppingPriceResults = pizzaResults.toppingPrice();
+    // var pizzaToppingPriceResults = pizzaResults.toppingPrice();
 
     $("#result").text(pizzaSizePriceResults);
-    $("#result2").text(pizzaToppingPriceResults);
+    // $("#result2").text(pizzaToppingPriceResults);
 
   }
 

@@ -5,6 +5,7 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
+    <meta charset="utf-8">
     <title>Pizza</title>
   </head>
   <body>
@@ -21,16 +22,18 @@
         </div>
         <br>
         <div class="client-order">
-          <div id="toppings">
             <label>Select Your Toppings</label>
-            <br>
-            <input type="checkbox" id="pepperoni" value="pepperoni">Pepperoni<br>
-            <input type="checkbox" id="sausage" value="sausage">Sausage<br>
-            <input type="checkbox" id="cheese" value="cheese">Cheese<br>
-            <input type="checkbox" id="jalapenio" value="jalapenio">Jalapenio<br>
-            <input type="checkbox" id="chicken" value="chicken">Chicken<br>
-            <input type="checkbox" id="tomato" value="tomato">Tomato<br>
-          </div>
+            <select class="form-control" id="pizzaType">
+              <option>Vegitarian</option>
+              <option>Meat-Lovers</option>
+              <option>Vegan</option>
+            </select>
+            <!-- <input type="checkbox" class="topping" name="pizza-topping" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" class="topping" name="pizza-topping" value="sausage">Sausage<br>
+            <input type="checkbox" class="topping" name="pizza-topping" value="cheese">Cheese<br>
+            <input type="checkbox" class="topping" name="pizza-topping" value="jalapenio">Jalapenio<br>
+            <input type="checkbox" class="topping" name="pizza-topping" value="chicken">Chicken<br>
+            <input type="checkbox" class="topping" name="pizza-topping" value="tomato">Tomato<br> -->
         </div>
         <br>
         <button type="submit" name="button" class="btn btn-success">Submit</button>
